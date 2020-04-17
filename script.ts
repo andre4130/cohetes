@@ -18,7 +18,7 @@ function propellerCounter(numberOfPropellers:number){
   };
 
 
-  function createRocket(id:string, numberOfPropellers:number, propellerPower:number[], counter:number){
+  function createRocket(id:string, numberOfPropellers:number, propellerPower:number[]){
 
     var button = document.getElementById("buttonSet"), t:number = 0;
     button.onclick = function() {
