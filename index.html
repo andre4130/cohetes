@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://kit.fontawesome.com/595f436dd9.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="controller/rocket.js"></script>
+  <script type="text/javascript" src="controller/script.js"></script>
+  <title>RocketRacer</title>
+</head>
+<body class="body1" id="body">
+  <div class="jumbotron mt-5">
+    <div class="container jumbo1">
+      <h1 class="display-3 bold">Hello, Space Racer</h1>
+      <p>The space age has already started. Pick up your rocket and be the first to reach the outer space!</p>
+      <p><a class="btn btn-lg race" id="buttonStart" onclick="createRocket()" href="#" role="button">Let's Race!</a></p>
+    </div>
+    <div class="jumbo2">
+      <h1 class="display-3 bold">Set up your Rocket!</h1>
+      <p>Insert your rocket ID, number of propellers and power</p>
+      <small><i>(You need to create at least 2 rockets to be able to race)</i></small>
+    </div>
+    <div class="jumbo3">
+      <h1 class="display-3 bold">The Race has Started!</h1>
+      <p>Use the Control buttons to speed up and slow down your rocket</p>
+    </div>
+  </div>
+
+  <div class="container d-flex" style="height: auto; width:90vw">
+    <!-- container general que es flex -->
+    <div class="rocketCreate row pl-2" style="position: relative;">
+      <!-- columna que contiene el grafico -->
+      <div class="col-1 m-3">
+        <div class="d-flex">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 183 457.5" style="enable-background:new 0 0 183 457.5; height:200px; opacity:0.65;" xml:space="preserve">
+          <style type="text/css">
+          .st0{fill:#F05732;}
+          .st1{fill:none;}
+          .st2{fill:#8DCEC8;}
+          .st3{fill:#D2CBBE;}
+          .st4{fill:#FFFEFD;}
+          .st5{fill:url(#SVGID_1_);}
+          .st6{fill:url(#SVGID_2_);}
+          .st7{fill:url(#SVGID_3_);}
+          .st8{fill:url(#SVGID_4_);}
+          .st9{fill:url(#SVGID_5_);}
+          .st10{fill:url(#SVGID_6_);}
+          .st11{fill:url(#SVGID_7_);}
+          .st12{fill:url(#SVGID_8_);}
+          .st13{fill:url(#SVGID_9_);}
+          .st14{fill:url(#SVGID_10_);}
+          .st15{fill:#F05732;stroke:#000000;stroke-miterlimit:10;}
+          .st16{fill:none;stroke:#000000;stroke-miterlimit:10;}
+          .st17{fill:#8DCEC8;stroke:#000000;stroke-miterlimit:10;}
+          .st18{fill:#D2CBBE;stroke:#000000;stroke-miterlimit:10;}
+          .st19{fill:#FFFEFD;stroke:#000000;stroke-miterlimit:10;}
+          .st20{fill:url(#SVGID_11_);stroke:#000000;stroke-miterlimit:10;}
+          .st21{fill:url(#SVGID_12_);stroke:#000000;stroke-miterlimit:10;}
+          .st22{fill:url(#SVGID_13_);stroke:#000000;stroke-miterlimit:10;}
+          .st23{fill:url(#SVGID_14_);stroke:#000000;stroke-miterlimit:10;}
+          .st24{fill:url(#SVGID_15_);stroke:#000000;stroke-miterlimit:10;}
+          .st25{fill:url(#SVGID_16_);stroke:#000000;stroke-miterlimit:10;}
+          .st26{fill:url(#SVGID_17_);stroke:#000000;stroke-miterlimit:10;}
+          .st27{fill:url(#SVGID_18_);stroke:#000000;stroke-miterlimit:10;}
+          .st28{fill:url(#SVGID_19_);stroke:#000000;stroke-miterlimit:10;}
+          .st29{fill:url(#SVGID_20_);stroke:#000000;stroke-miterlimit:10;}
+          </style>
+          <g>
+            <path class="st0" d="M143,90.8l-12.3-35.1c-1.9-4.5-8.6-4.5-10.3-0.2l-12.6,35l0,0v231.9c0,7.1,5.7,12.8,12.8,12.8h10
+            c7,0,12.8-5.7,12.8-12.8L143,90.8"/>
+            <g>
+              <path class="st0" d="M107.7,178.8l-7-21.3c-1.2-3.7-6.6-3.7-7.8,0L84.7,179l-0.4,177.9l23.1-0.1L107.7,178.8z"/>
+              <g>
+                <path class="st0" d="M143.4,179l-0.2,177.8l22.6,0l0.6-177.8l-7.4-21.5c-1.3-3.7-6.8-3.7-8.1,0L143.4,179z"/>
+              </g>
+            </g>
+            <g>
+              <polygon class="st2" points="143.2,356.8 134.7,373.9 173.8,373.9 165.8,356.8 		"/>
+              <polygon class="st2" points="107.4,356.7 84.8,356.8 76.2,373.9 115.4,373.9 		"/>
+            </g>
+            <line class="st1" x1="143.2" y1="356.8" x2="165.8" y2="356.8"/>
+            <g>
+              <rect x="107.8" y="108.9" class="st2" width="35.3" height="36"/>
+              <rect x="107.7" y="159.5" class="st2" width="35.3" height="5"/>
+            </g>
+            <g>
+              <rect x="143.3" y="185.2" class="st2" width="23" height="7.9"/>
+              <rect x="143.2" y="203.4" class="st2" width="23" height="4"/>
+              <rect x="143.3" y="228.4" class="st2" width="22.8" height="2.9"/>
+              <rect x="143.2" y="246.7" class="st2" width="23" height="3.8"/>
+              <rect x="143.2" y="265.4" class="st2" width="22.8" height="3.6"/>
+              <rect x="143.3" y="283.8" class="st2" width="22.5" height="3.8"/>
+            </g>
+            <g>
+              <rect x="84.8" y="185.3" class="st2" width="23" height="7.9"/>
+              <rect x="84.7" y="203.5" class="st2" width="23" height="4"/>
+              <rect x="84.9" y="228.5" class="st2" width="22.8" height="2.9"/>
+              <rect x="84.6" y="246.8" class="st2" width="23" height="3.8"/>
+              <rect x="84.9" y="265.5" class="st2" width="22.8" height="3.6"/>
+              <rect x="85" y="283.9" class="st2" width="22.5" height="3.8"/>
+            </g>
+            <rect x="87.2" y="374" class="st3" width="9.7" height="84.3"/>
+            <rect x="154.2" y="373.8" class="st3" width="9.7" height="84.3"/>
+            <rect x="139.5" y="374" class="st4" width="8.3" height="84.3"/>
+            <rect x="103.5" y="374" class="st4" width="8.3" height="84.3"/>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="96.9928" y1="479.4076" x2="96.9928" y2="406.2245">
+              <stop  offset="0" style="stop-color:#F2F0E7"/>
+              <stop  offset="0.109" style="stop-color:#F2E8DE"/>
+              <stop  offset="0.2904" style="stop-color:#F2D2C4"/>
+              <stop  offset="0.5217" style="stop-color:#F1AF9B"/>
+              <stop  offset="0.7911" style="stop-color:#F17F62"/>
+              <stop  offset="0.9944" style="stop-color:#F05732"/>
+            </linearGradient>
+            <path class="st5" d="M86,425.3l1.2-18.5c0-0.5,0.6-0.6,0.8-0.2l7.6,16.7c0.2,0.4,0.7,0.3,0.8,0l6.3-16.7c0.2-0.4,0.8-0.3,0.9,0.1
+            l0.9,21.2c0,0.3,0.4,0.5,0.6,0.4l18-9.1c0.4-0.2,0.8,0.3,0.6,0.6L112.7,435c-0.2,0.2-0.1,0.5,0.2,0.6l11.1,5.5
+            c0.3,0.2,0.3,0.7,0,0.8l-8.9,3.2c-0.3,0.1-0.4,0.6-0.1,0.8l22.2,15.2c0.4,0.3,0.1,0.9-0.4,0.8l-25.1-6.6c-0.4-0.1-0.7,0.3-0.5,0.6
+            l7.7,15.7c0.2,0.4-0.4,0.9-0.7,0.5l-14.5-14.5c-0.3-0.3-0.7-0.1-0.7,0.3l-1.2,18.4c0,0.5-0.6,0.6-0.8,0.2l-7.9-17.2
+            c-0.2-0.3-0.6-0.3-0.8,0l-10.1,19.8c-0.2,0.4-0.9,0.2-0.8-0.2l1.8-17.9c0-0.3-0.3-0.6-0.6-0.4l-12.9,6.4c-0.4,0.2-0.8-0.2-0.6-0.6
+            l9.9-16.1c0.2-0.3,0-0.7-0.4-0.7l-21.3,1.4c-0.5,0-0.6-0.6-0.3-0.8l15.2-9.9c0.3-0.2,0.3-0.5,0-0.7l-14.1-11.3
+            c-0.4-0.3-0.1-0.9,0.4-0.8l18.8,5c0.4,0.1,0.7-0.3,0.5-0.6l-8.1-16.5c-0.2-0.4,0.3-0.8,0.6-0.6l15.1,10.8
+            C85.6,425.8,86,425.6,86,425.3z"/>
+
+            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-149.6238" y1="-341.1752" x2="-188.9248" y2="-402.9102" gradientTransform="matrix(0.7221 0.6918 -0.6918 0.7221 20.9824 824.6687)">
+              <stop  offset="0" style="stop-color:#F2F0E7"/>
+              <stop  offset="0.109" style="stop-color:#F2E8DE"/>
+              <stop  offset="0.2904" style="stop-color:#F2D2C4"/>
+              <stop  offset="0.5217" style="stop-color:#F1AF9B"/>
+              <stop  offset="0.7911" style="stop-color:#F17F62"/>
+              <stop  offset="0.9944" style="stop-color:#F05732"/>
+            </linearGradient>
+            <path class="st6" d="M160.7,424.6l13.7-12.5c0.3-0.3,0.9,0,0.7,0.5l-6.1,17.3c-0.1,0.4,0.3,0.7,0.6,0.5l16.1-7.7
+            c0.4-0.2,0.8,0.3,0.5,0.7l-14.1,16c-0.2,0.2-0.1,0.6,0.2,0.7l19.3,5.8c0.4,0.1,0.4,0.8,0,0.9l-18.5,3.5c-0.3,0-0.4,0.3-0.3,0.6
+            l4.2,11.7c0.1,0.4-0.2,0.7-0.6,0.6l-8.7-3.8c-0.3-0.1-0.7,0.1-0.6,0.5l5.5,26.3c0.1,0.5-0.5,0.7-0.8,0.3l-13.6-22.1
+            c-0.2-0.3-0.7-0.3-0.8,0.1l-5.3,16.7c-0.1,0.5-0.8,0.4-0.9-0.1l-0.5-20.5c0-0.4-0.5-0.6-0.7-0.3l-13.6,12.4c-0.3,0.3-0.9,0-0.7-0.5
+            l6.2-17.9c0.1-0.3-0.2-0.7-0.6-0.6l-21,7.3c-0.5,0.2-0.8-0.4-0.4-0.7l13.7-11.7c0.3-0.2,0.2-0.6-0.2-0.8l-13.7-4.3
+            c-0.4-0.1-0.4-0.7,0-0.8l18.3-4.7c0.3-0.1,0.4-0.5,0.2-0.8l-16.4-13.8c-0.3-0.3-0.1-0.9,0.4-0.8l17.8,3.4c0.3,0.1,0.6-0.2,0.5-0.5
+            l-2.3-17.9c-0.1-0.5,0.6-0.7,0.8-0.3l10.1,16.6c0.2,0.3,0.7,0.3,0.8-0.1l5.5-17.5c0.1-0.4,0.8-0.4,0.9,0.1l3.4,18.2
+            C160.1,424.7,160.5,424.8,160.7,424.6z"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!-- columna con las preguntas -->
+    <div class="col-4" style="height:180px; display: flex; flex-direction:column; justify-content: space-between;">
+      <!-- <div class="">
+      <h5>How Many Rockets are Racing?</h5>
+    </div> -->
+    <div class="">
+      <h5>Rocket ID</h5>
+    </div>
+    <div class="">
+      <h5>Number of Propellers</h5>
+    </div>
+    <div class="">
+      <h5>Propeller Power</h5>
+    </div>
+  </div>
+  <!-- columna con los inputs -->
+  <div class="col-4" style="height:180px; display: flex; flex-direction:column; justify-content: space-between;">
+    <div class="">
+      <input type="text" name="rocketID" id="rocketId" value="" placeholder="ID here" required="true">
+    </div>
+    <div class="">
+      <input type="number" name="propNumber" min="1" max="6" id="propellerNumber" onchange="propellerCounter()" value="" placeholder="number of propellers">
+    </div>
+    <div class="">
+      <input type="number" name="propPower" min="0" max="90" step="10" id="power1" value="" disabled>
+      <input type="number" name="propPower" min="0" max="90" step="10" id="power2" value="" disabled>
+      <input type="number" name="propPower" min="0" max="90" step="10" id="power3" value="" disabled>
+      <input type="number" name="propPower" min="0" max="90" step="10" id="power4" value="" disabled>
+      <input type="number" name="propPower" min="0" max="90" step="10" id="power5" value="" disabled>
+      <input type="number" name="propPower" min="0" max="90" step="10" id="power6" value="" disabled>
+    </div>
+
+  </div>
+  <!-- columna botones -->
+  <div class="col-3" style="height:150px; display: flex; flex-direction:column; justify-content: space-between;">
+    <div class="">
+      <a class="btn btn-lg race" id="buttonSet" onclick="createRocket();" role="button">Set a new Rocket</a>
+    </div>
+    <div class="">
+      <a class="btn btn-lg race disabled" id="buttonRace" onclick="startRace()" role="button">Let's Race!</a>
+      <!-- href="race.html"  -->
+    </div>
+  </div>
+</div>
+
+<!-- Start of the second pop-up -->
+
+<div class="rocketCreateRace row pl-2">
+  <div class="row container">
+    <div class="col-1">
+    </div>
+    <div class="col-1 mt-3">
+      <div class="d-flex">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 142 446" style="enable-background:new 0 0 142 446; height:200px; opacity:0.65;" xml:space="preserve">
+        <style type="text/css">
+        .st0{fill:#F05732;}
+        .st1{fill:none;}
+        .st2{fill:#8DCEC8;}
+        .st3{fill:#D2CBBE;}
+        .st4{fill:#FFFEFD;}
+        .st5{fill:url(#SVGID_1_);}
+        .st6{fill:url(#SVGID_2_);}
+        .st7{fill:url(#SVGID_3_);}
+        .st8{fill:url(#SVGID_4_);}
+        .st9{fill:url(#SVGID_5_);}
+        .st10{fill:url(#SVGID_6_);}
+        .st11{fill:url(#SVGID_7_);}
+        .st12{fill:url(#SVGID_8_);}
+        .st13{fill:url(#SVGID_9_);}
+        .st14{fill:url(#SVGID_10_);}
+        .st15{fill:#F05732;stroke:#000000;stroke-miterlimit:10;}
+        .st16{fill:none;stroke:#000000;stroke-miterlimit:10;}
+        .st17{fill:#8DCEC8;stroke:#000000;stroke-miterlimit:10;}
+        .st18{fill:#D2CBBE;stroke:#000000;stroke-miterlimit:10;}
+        .st19{fill:#FFFEFD;stroke:#000000;stroke-miterlimit:10;}
+        .st20{fill:url(#SVGID_11_);stroke:#000000;stroke-miterlimit:10;}
+        .st21{fill:url(#SVGID_12_);stroke:#000000;stroke-miterlimit:10;}
+        .st22{fill:url(#SVGID_13_);stroke:#000000;stroke-miterlimit:10;}
+        .st23{fill:url(#SVGID_14_);stroke:#000000;stroke-miterlimit:10;}
+        .st24{fill:url(#SVGID_15_);stroke:#000000;stroke-miterlimit:10;}
+        .st25{fill:url(#SVGID_16_);stroke:#000000;stroke-miterlimit:10;}
+        .st26{fill:url(#SVGID_17_);stroke:#000000;stroke-miterlimit:10;}
+        .st27{fill:url(#SVGID_18_);stroke:#000000;stroke-miterlimit:10;}
+        .st28{fill:url(#SVGID_19_);stroke:#000000;stroke-miterlimit:10;}
+        .st29{fill:url(#SVGID_20_);stroke:#000000;stroke-miterlimit:10;}
+        </style>
+        <g>
+          <path class="st3" d="M90,45.5L77.7,10.3c-1.9-4.5-8.6-4.5-10.3-0.2l-12.6,35l0,0v231.9c0,7.1,5.7,12.8,12.8,12.8h10
+          c7,0,12.8-5.7,12.8-12.8L90,45.5"/>
+          <g>
+            <path class="st3" d="M54.7,133.4l-7-21.3c-1.2-3.7-6.6-3.7-7.8,0l-8.2,21.5l-0.4,177.9l23.1-0.1L54.7,133.4z"/>
+            <g>
+              <path class="st3" d="M90.4,133.7l-0.2,177.8l22.6,0l0.6-177.8l-7.4-21.5c-1.3-3.7-6.8-3.7-8.1,0L90.4,133.7z"/>
+            </g>
+          </g>
+          <g>
+            <polygon class="st0" points="90.2,311.4 81.7,328.5 120.8,328.5 112.8,311.4 		"/>
+            <polygon class="st0" points="54.4,311.4 31.8,311.4 23.2,328.5 62.4,328.5 		"/>
+          </g>
+          <line class="st1" x1="90.2" y1="311.4" x2="112.8" y2="311.4"/>
+          <g>
+            <rect x="54.8" y="63.6" class="st0" width="35.3" height="36"/>
+            <rect x="54.7" y="114.2" class="st0" width="35.3" height="5"/>
+          </g>
+          <g>
+            <rect x="90.3" y="139.9" class="st0" width="23" height="7.9"/>
+            <rect x="90.2" y="158.1" class="st0" width="23" height="4"/>
+            <rect x="90.3" y="183.1" class="st0" width="22.8" height="2.9"/>
+            <rect x="90.2" y="201.3" class="st0" width="23" height="3.8"/>
+            <rect x="90.2" y="220.1" class="st0" width="22.8" height="3.6"/>
+            <rect x="90.3" y="238.5" class="st0" width="22.5" height="3.8"/>
+          </g>
+          <g>
+            <rect x="31.8" y="139.9" class="st0" width="23" height="7.9"/>
+            <rect x="31.7" y="158.2" class="st0" width="23" height="4"/>
+            <rect x="31.9" y="183.2" class="st0" width="22.8" height="2.9"/>
+            <rect x="31.6" y="201.4" class="st0" width="23" height="3.8"/>
+            <rect x="31.9" y="220.2" class="st0" width="22.8" height="3.6"/>
+            <rect x="32" y="238.6" class="st0" width="22.5" height="3.8"/>
+          </g>
+          <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="34.1667" y1="370.8333" x2="43.8333" y2="370.8333">
+            <stop  offset="0" style="stop-color:#F2F0E7"/>
+            <stop  offset="0.109" style="stop-color:#F2E8DE"/>
+            <stop  offset="0.2904" style="stop-color:#F2D2C4"/>
+            <stop  offset="0.5217" style="stop-color:#F1AF9B"/>
+            <stop  offset="0.7911" style="stop-color:#F17F62"/>
+            <stop  offset="0.9944" style="stop-color:#F05732"/>
+          </linearGradient>
+          <rect x="34.2" y="328.7" class="st5" width="9.7" height="84.3"/>
+          <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="101.1667" y1="370.6666" x2="110.8333" y2="370.6666">
+            <stop  offset="0" style="stop-color:#F2F0E7"/>
+            <stop  offset="0.109" style="stop-color:#F2E8DE"/>
+            <stop  offset="0.2904" style="stop-color:#F2D2C4"/>
+            <stop  offset="0.5217" style="stop-color:#F1AF9B"/>
+            <stop  offset="0.7911" style="stop-color:#F17F62"/>
+            <stop  offset="0.9944" style="stop-color:#F05732"/>
+          </linearGradient>
+          <rect x="101.2" y="328.5" class="st6" width="9.7" height="84.3"/>
+          <rect x="86.5" y="328.7" class="st2" width="8.3" height="84.3"/>
+          <rect x="50.5" y="328.7" class="st2" width="8.3" height="84.3"/>
+          <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="43.9928" y1="434.0742" x2="43.9928" y2="360.8911">
+            <stop  offset="0" style="stop-color:#46F0E7"/>
+            <stop  offset="0.109" style="stop-color:#4FE8DE"/>
+            <stop  offset="0.2904" style="stop-color:#67D2C4"/>
+            <stop  offset="0.5217" style="stop-color:#8EAF9B"/>
+            <stop  offset="0.7911" style="stop-color:#C37F62"/>
+            <stop  offset="0.9944" style="stop-color:#F05732"/>
+          </linearGradient>
+          <path class="st7" d="M33,379.9l1.2-18.5c0-0.5,0.6-0.6,0.8-0.2l7.6,16.7c0.2,0.4,0.7,0.3,0.8,0l6.3-16.7c0.2-0.4,0.8-0.3,0.9,0.1
+          l0.9,21.2c0,0.3,0.4,0.5,0.6,0.4l18-9.1c0.4-0.2,0.8,0.3,0.6,0.6l-10.9,15.3c-0.2,0.2-0.1,0.5,0.2,0.6l11.1,5.5
+          c0.3,0.2,0.3,0.7,0,0.8l-8.9,3.2c-0.3,0.1-0.4,0.6-0.1,0.8l22.2,15.2c0.4,0.3,0.1,0.9-0.4,0.8l-25.1-6.6c-0.4-0.1-0.7,0.3-0.5,0.6
+          l7.7,15.7c0.2,0.4-0.4,0.9-0.7,0.5l-14.5-14.5c-0.3-0.3-0.7-0.1-0.7,0.3l-1.2,18.4c0,0.5-0.6,0.6-0.8,0.2L40.1,414
+          c-0.2-0.3-0.6-0.3-0.8,0l-10.1,19.8c-0.2,0.4-0.9,0.2-0.8-0.2l1.8-17.9c0-0.3-0.3-0.6-0.6-0.4l-12.9,6.4c-0.4,0.2-0.8-0.2-0.6-0.6
+          l9.9-16.1c0.2-0.3,0-0.7-0.4-0.7l-21.3,1.4c-0.5,0-0.6-0.6-0.3-0.8l15.2-9.9c0.3-0.2,0.3-0.5,0-0.7L5.1,382.9
+          c-0.4-0.3-0.1-0.9,0.4-0.8l18.8,5c0.4,0.1,0.7-0.3,0.5-0.6L16.6,370c-0.2-0.4,0.3-0.8,0.6-0.6l15.1,10.8
+          C32.6,380.5,33,380.3,33,379.9z"/>
+
+          <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-42.1596" y1="-17.9577" x2="-95.919" y2="-74.0756" gradientTransform="matrix(0.7221 0.6918 -0.6918 0.7221 120.8886 475.9582)">
+            <stop  offset="0" style="stop-color:#46F0E7"/>
+            <stop  offset="0.109" style="stop-color:#4FE8DE"/>
+            <stop  offset="0.2904" style="stop-color:#67D2C4"/>
+            <stop  offset="0.5217" style="stop-color:#8EAF9B"/>
+            <stop  offset="0.7911" style="stop-color:#C37F62"/>
+            <stop  offset="0.9944" style="stop-color:#F05732"/>
+          </linearGradient>
+          <path class="st8" d="M107.7,379.2l13.7-12.5c0.3-0.3,0.9,0,0.7,0.5l-6.1,17.3c-0.1,0.4,0.3,0.7,0.6,0.5l16.1-7.7
+          c0.4-0.2,0.8,0.3,0.5,0.7l-14.1,16c-0.2,0.2-0.1,0.6,0.2,0.7l19.3,5.8c0.4,0.1,0.4,0.8,0,0.9l-18.5,3.5c-0.3,0-0.4,0.3-0.3,0.6
+          l4.2,11.7c0.1,0.4-0.2,0.7-0.6,0.6l-8.7-3.8c-0.3-0.1-0.7,0.1-0.6,0.5l5.5,26.3c0.1,0.5-0.5,0.7-0.8,0.3l-13.6-22.1
+          c-0.2-0.3-0.7-0.3-0.8,0.1l-5.3,16.7c-0.1,0.5-0.8,0.4-0.9-0.1L98,415c0-0.4-0.5-0.6-0.7-0.3l-13.6,12.4c-0.3,0.3-0.9,0-0.7-0.5
+          l6.2-17.9c0.1-0.3-0.2-0.7-0.6-0.6l-21,7.3c-0.5,0.2-0.8-0.4-0.4-0.7L80.9,403c0.3-0.2,0.2-0.6-0.2-0.8L67,398
+          c-0.4-0.1-0.4-0.7,0-0.8l18.3-4.7c0.3-0.1,0.4-0.5,0.2-0.8l-16.4-13.8c-0.3-0.3-0.1-0.9,0.4-0.8l17.8,3.4c0.3,0.1,0.6-0.2,0.5-0.5
+          L85.5,362c-0.1-0.5,0.6-0.7,0.8-0.3l10.1,16.6c0.2,0.3,0.7,0.3,0.8-0.1l5.5-17.5c0.1-0.4,0.8-0.4,0.9,0.1L107,379
+          C107.1,379.3,107.5,379.5,107.7,379.2z"/>
+        </g>
+      </svg>
+
+    </div>
+  </div>
+  <div class="col-3" style="height:180px; display: flex; flex-direction:column; justify-content: space-between;margin-top:15px">
+    <div class="">
+      <h5 id="idRocket1">Rocket ID</h5>
+    </div>
+    <div>
+      <h5 id="propellerNumber1">Number of Propellers</h5>
+    </div>
+    <div>
+      <h5 id="propellerPower1">Propeller Power</h5>
+    </div>
+    <div>
+      <h5>Current speed:</h5>
+      <h5 id="speed1">0km/h</h5>
+    </div>
+  </div>
+  <div class="col-2 d-flex winner"  style="width:50px; align-self:center; justify:center; text-align:center;">
+    <h3 class="" id="winner1" style="font-size: 1.75rem;font-weight: normal;color: #f05732;"></h3>
+  </div>
+  <div class="col-1 mt-3">
+    <div class="d-flex">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 142 446" style="enable-background:new 0 0 142 446;height:200px; opacity:0.65" xml:space="preserve">
+      <style type="text/css">
+      .st0{fill:#F05732;}
+      .st1{fill:none;}
+      .st2{fill:#8DCEC8;}
+      .st3{fill:#D2CBBE;}
+      .st4{fill:#FFFEFD;}
+      .st5{fill:url(#SVGID_1_);}
+      .st6{fill:url(#SVGID_2_);}
+      .st7{fill:url(#SVGID_3_);}
+      .st8{fill:url(#SVGID_4_);}
+      .st9{fill:url(#SVGID_5_);}
+      .st10{fill:url(#SVGID_6_);}
+      .st11{fill:url(#SVGID_7_);}
+      .st12{fill:url(#SVGID_8_);}
+      .st13{fill:url(#SVGID_9_);}
+      .st14{fill:url(#SVGID_10_);}
+      .st15{fill:#F05732;stroke:#000000;stroke-miterlimit:10;}
+      .st16{fill:none;stroke:#000000;stroke-miterlimit:10;}
+      .st17{fill:#8DCEC8;stroke:#000000;stroke-miterlimit:10;}
+      .st18{fill:#D2CBBE;stroke:#000000;stroke-miterlimit:10;}
+      .st19{fill:#FFFEFD;stroke:#000000;stroke-miterlimit:10;}
+      .st20{fill:url(#SVGID_11_);stroke:#000000;stroke-miterlimit:10;}
+      .st21{fill:url(#SVGID_12_);stroke:#000000;stroke-miterlimit:10;}
+      .st22{fill:url(#SVGID_13_);stroke:#000000;stroke-miterlimit:10;}
+      .st23{fill:url(#SVGID_14_);stroke:#000000;stroke-miterlimit:10;}
+      .st24{fill:url(#SVGID_15_);stroke:#000000;stroke-miterlimit:10;}
+      .st25{fill:url(#SVGID_16_);stroke:#000000;stroke-miterlimit:10;}
+      .st26{fill:url(#SVGID_17_);stroke:#000000;stroke-miterlimit:10;}
+      .st27{fill:url(#SVGID_18_);stroke:#000000;stroke-miterlimit:10;}
+      .st28{fill:url(#SVGID_19_);stroke:#000000;stroke-miterlimit:10;}
+      .st29{fill:url(#SVGID_20_);stroke:#000000;stroke-miterlimit:10;}
+      </style>
+      <g>
+        <path class="st2" d="M89,45.5L76.7,10.3c-1.9-4.5-8.6-4.5-10.3-0.2l-12.6,35l0,0v231.9c0,7.1,5.7,12.8,12.8,12.8h10
+        c7,0,12.8-5.7,12.8-12.8L89,45.5"/>
+        <g>
+          <path class="st2" d="M53.7,133.4l-7-21.3c-1.2-3.7-6.6-3.7-7.8,0l-8.2,21.5l-0.4,177.9l23.1-0.1L53.7,133.4z"/>
+          <g>
+            <path class="st2" d="M89.4,133.7l-0.2,177.8l22.6,0l0.6-177.8l-7.4-21.5c-1.3-3.7-6.8-3.7-8.1,0L89.4,133.7z"/>
+          </g>
+        </g>
+        <g>
+          <polygon class="st0" points="89.2,311.4 80.7,328.5 119.8,328.5 111.8,311.4 		"/>
+          <polygon class="st0" points="53.4,311.4 30.7,311.4 22.2,328.5 61.4,328.5 		"/>
+        </g>
+        <line class="st1" x1="89.2" y1="311.4" x2="111.8" y2="311.4"/>
+        <g>
+          <rect x="53.8" y="63.6" class="st0" width="35.3" height="36"/>
+          <rect x="53.7" y="114.2" class="st0" width="35.3" height="5"/>
+        </g>
+        <g>
+          <rect x="89.3" y="139.9" class="st0" width="23" height="7.9"/>
+          <rect x="89.2" y="158.1" class="st0" width="23" height="4"/>
+          <rect x="89.3" y="183.1" class="st0" width="22.8" height="2.9"/>
+          <rect x="89.2" y="201.3" class="st0" width="23" height="3.8"/>
+          <rect x="89.2" y="220.1" class="st0" width="22.8" height="3.6"/>
+          <rect x="89.3" y="238.5" class="st0" width="22.5" height="3.8"/>
+        </g>
+        <g>
+          <rect x="30.8" y="139.9" class="st0" width="23" height="7.9"/>
+          <rect x="30.7" y="158.2" class="st0" width="23" height="4"/>
+          <rect x="30.9" y="183.2" class="st0" width="22.8" height="2.9"/>
+          <rect x="30.6" y="201.4" class="st0" width="23" height="3.8"/>
+          <rect x="30.9" y="220.2" class="st0" width="22.8" height="3.6"/>
+          <rect x="31" y="238.6" class="st0" width="22.5" height="3.8"/>
+        </g>
+        <rect x="33.2" y="328.7" class="st3" width="9.7" height="84.3"/>
+        <rect x="100.2" y="328.5" class="st3" width="9.7" height="84.3"/>
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="85.4999" y1="370.8333" x2="93.8332" y2="370.8333">
+          <stop  offset="0" style="stop-color:#F2F0E7"/>
+          <stop  offset="0.109" style="stop-color:#F2E8DE"/>
+          <stop  offset="0.2904" style="stop-color:#F2D2C4"/>
+          <stop  offset="0.5217" style="stop-color:#F1AF9B"/>
+          <stop  offset="0.7911" style="stop-color:#F17F62"/>
+          <stop  offset="0.9944" style="stop-color:#F05732"/>
+        </linearGradient>
+        <rect x="85.5" y="328.7" class="st5" width="8.3" height="84.3"/>
+        <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="49.4976" y1="370.8333" x2="57.8309" y2="370.8333">
+          <stop  offset="0" style="stop-color:#F2F0E7"/>
+          <stop  offset="0.109" style="stop-color:#F2E8DE"/>
+          <stop  offset="0.2904" style="stop-color:#F2D2C4"/>
+          <stop  offset="0.5217" style="stop-color:#F1AF9B"/>
+          <stop  offset="0.7911" style="stop-color:#F17F62"/>
+          <stop  offset="0.9944" style="stop-color:#F05732"/>
+        </linearGradient>
+        <rect x="49.5" y="328.7" class="st6" width="8.3" height="84.3"/>
+        <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="42.9926" y1="434.0742" x2="42.9926" y2="360.8911">
+          <stop  offset="0" style="stop-color:#A1F0E7"/>
+          <stop  offset="0.109" style="stop-color:#A0E8DE"/>
+          <stop  offset="0.2904" style="stop-color:#9DD2C4"/>
+          <stop  offset="0.5217" style="stop-color:#99AF9B"/>
+          <stop  offset="0.7911" style="stop-color:#937F62"/>
+          <stop  offset="0.9944" style="stop-color:#8E5732"/>
+        </linearGradient>
+        <path class="st7" d="M32,379.9l1.2-18.5c0-0.5,0.6-0.6,0.8-0.2l7.6,16.7c0.2,0.4,0.7,0.3,0.8,0l6.3-16.7c0.2-0.4,0.8-0.3,0.9,0.1
+        l0.9,21.2c0,0.3,0.4,0.5,0.6,0.4l18-9.1c0.4-0.2,0.8,0.3,0.6,0.6l-10.9,15.3c-0.2,0.2-0.1,0.5,0.2,0.6l11.1,5.5
+        c0.3,0.2,0.3,0.7,0,0.8l-8.9,3.2c-0.3,0.1-0.4,0.6-0.1,0.8l22.2,15.2c0.4,0.3,0.1,0.9-0.4,0.8l-25.1-6.6c-0.4-0.1-0.7,0.3-0.5,0.6
+        l7.7,15.7c0.2,0.4-0.4,0.9-0.7,0.5l-14.5-14.5c-0.3-0.3-0.7-0.1-0.7,0.3l-1.2,18.4c0,0.5-0.6,0.6-0.8,0.2L39.1,414
+        c-0.2-0.3-0.6-0.3-0.8,0l-10.1,19.8c-0.2,0.4-0.9,0.2-0.8-0.2l1.8-17.9c0-0.3-0.3-0.6-0.6-0.4l-12.9,6.4c-0.4,0.2-0.8-0.2-0.6-0.6
+        l9.9-16.1c0.2-0.3,0-0.7-0.4-0.7l-21.3,1.4c-0.5,0-0.6-0.6-0.3-0.8l15.2-9.9c0.3-0.2,0.3-0.5,0-0.7L4.1,382.9
+        c-0.4-0.3-0.1-0.9,0.4-0.8l18.8,5c0.4,0.1,0.7-0.3,0.5-0.6L15.6,370c-0.2-0.4,0.3-0.8,0.6-0.6l15.1,10.8
+        C31.6,380.5,32,380.3,32,379.9z"/>
+        <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="101.8668" y1="441.0546" x2="101.8668" y2="360.387">
+          <stop  offset="0" style="stop-color:#A1F0E7"/>
+          <stop  offset="0.109" style="stop-color:#A0E8DE"/>
+          <stop  offset="0.2904" style="stop-color:#9DD2C4"/>
+          <stop  offset="0.5217" style="stop-color:#99AF9B"/>
+          <stop  offset="0.7911" style="stop-color:#937F62"/>
+          <stop  offset="0.9944" style="stop-color:#8E5732"/>
+        </linearGradient>
+        <path class="st8" d="M106.7,379.2l13.7-12.5c0.3-0.3,0.9,0,0.7,0.5l-6.1,17.3c-0.1,0.4,0.3,0.7,0.6,0.5l16.1-7.7
+        c0.4-0.2,0.8,0.3,0.5,0.7l-14.1,16c-0.2,0.2-0.1,0.6,0.2,0.7l19.3,5.8c0.4,0.1,0.4,0.8,0,0.9l-18.5,3.5c-0.3,0-0.4,0.3-0.3,0.6
+        l4.2,11.7c0.1,0.4-0.2,0.7-0.6,0.6l-8.7-3.8c-0.3-0.1-0.7,0.1-0.6,0.5l5.5,26.3c0.1,0.5-0.5,0.7-0.8,0.3l-13.6-22.1
+        c-0.2-0.3-0.7-0.3-0.8,0.1l-5.3,16.7c-0.1,0.5-0.8,0.4-0.9-0.1L97,415c0-0.4-0.5-0.6-0.7-0.3l-13.6,12.4c-0.3,0.3-0.9,0-0.7-0.5
+        l6.2-17.9c0.1-0.3-0.2-0.7-0.6-0.6l-21,7.3c-0.5,0.2-0.8-0.4-0.4-0.7L79.9,403c0.3-0.2,0.2-0.6-0.2-0.8L66,398
+        c-0.4-0.1-0.4-0.7,0-0.8l18.3-4.7c0.3-0.1,0.4-0.5,0.2-0.8l-16.4-13.8c-0.3-0.3-0.1-0.9,0.4-0.8l17.8,3.4c0.3,0.1,0.6-0.2,0.5-0.5
+        L84.5,362c-0.1-0.5,0.6-0.7,0.8-0.3l10.1,16.6c0.2,0.3,0.7,0.3,0.8-0.1l5.5-17.5c0.1-0.4,0.8-0.4,0.9,0.1L106,379
+        C106.1,379.3,106.5,379.5,106.7,379.2z"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="col-3 bg-alert" style="height:180px; display: flex; flex-direction:column; justify-content: space-between; margin-top:15px">
+  <div class="">
+    <h5 id="idRocket2">Rocket ID</h5>
+  </div>
+  <div>
+    <h5 id="propellerNumber2">Number of Propellers</h5>
+  </div>
+  <div>
+    <h5 id="propellerPower2">Propeller Power</h5>
+  </div>
+  <div>
+    <h5>Current speed:</h5>
+    <h5 id="speed2">0km/h</h5>
+  </div>
+</div>
+
+</div>
+<div class="row container">
+  <div class="col-1">
+  </div>
+  <div class="col-4" style="height:150px; display: flex; flex-direction:column; justify-content: space-evenly; align-items:center">
+    <div class="buttonRace">
+      <a class="btn btn-lg race" onclick="accelerate1();winner(currentSpeed1,currentSpeed2)" id="accelerate1" role="button">accelerate</a>
+    </div>
+    <div class="buttonRace">
+      <a class="btn btn-lg race" onclick="break1();winner(currentSpeed1,currentSpeed2)" id="break1" role="button">break</a>
+    </div>
+  </div>
+  <div class="col-2" style="width:50px;">
+  </div>
+  <div class="col-4 bg-alert" style="height:150px; display: flex; flex-direction:column; justify-content: space-evenly; align-items:center;">
+    <div class="buttonRace">
+      <a class="btn btn-lg race" onclick="accelerate2();winner(currentSpeed1,currentSpeed2)" id="accelerate2" role="button">accelerate</a>
+    </div>
+    <div class="buttonRace">
+      <a class="btn btn-lg race" onclick="break2();winner(currentSpeed1,currentSpeed2)" id="break2" role="button">break</a>
+    </div>
+  </div>
+  <div class="col-1">
+  </div>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+document.getElementById("buttonStart").addEventListener("click", function(){
+  document.querySelector(".rocketCreate").style.opacity = "0.9";
+  document.querySelector(".jumbo1").style.opacity = "0";
+  document.querySelector(".jumbo2").style.opacity = "0.95";
+});
+
+document.getElementById("buttonSet").addEventListener("click", function(){
+  if (counter>=1){
+    let temp = document.getElementById("buttonRace");
+    temp.classList.remove("disabled");
+  }
+});
+</script>
+
+</body>
+</html>
