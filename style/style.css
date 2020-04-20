@@ -1,0 +1,120 @@
+/* Webpage Colors
+#f2f0e7 background beige
+#d2cbbe background darker beige
+#8dcec8 Light Blue
+#f05732 - Orange sun
+#33322d - dark grey
+*/
+
+/* Rocket SVG Style */
+.st0{fill:#FF0000;}
+.st1{fill:#2683EA;}
+.st2{fill:#E8AB2E;}
+.st3{fill:#C1C1C1;}
+.st4{fill:#294862;}
+.st5{fill:#E5AC2E;}
+
+
+/* Main Styles */
+
+  /* background-blend-mode: soft-light; */
+
+.body1 {
+    background-image: url('images/NASA.jfif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 85% auto;
+    background-position:top;
+    background-color: #f2f0e7;
+    font-family: 'Space Mono', monospace;
+}
+.body2 {
+  background-image: url('images/Planetrace.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 85% auto;
+  background-position: bottom;
+  background-color: #f2f0e7;
+  /* background-blend-mode: soft-light; */
+  font-family: 'Space Mono', monospace;
+  transition:1s all;
+}
+
+.jumbotron{
+  opacity: 0.95;
+  background-color: #f2f0e7;
+  opacity: 95%;
+  display: flex;
+  align-content: center;
+  transition: 1s all;
+}
+
+
+.jumbo1{
+  opacity: 1;
+  justify-content: center;
+  display: grid;
+  position: relative;
+  transition: 1s all;
+  top: 15px;
+}
+
+.jumbo2{
+  opacity: 0;
+  justify-content: center;
+  display: inline-grid;
+  position: absolute;
+  transition: 2s all;
+  width:100vw;
+  margin-top: 20px;
+}
+
+.jumbo3{
+  opacity: 0;
+  justify-content: center;
+  display: inline-grid;
+  position: absolute;
+  transition: 2s all;
+  width:100vw;
+  margin-top: 20px;
+}
+
+.race {
+  background-color: #8dcec8;
+}
+
+.inputPower{
+  width: 5px;
+}
+
+.rocketCreate {
+  display: flex;
+  background-color: #f2f0e7;
+  opacity: 0;
+  transition: 1s all;
+  height: 250px;
+  width:90%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-flow: row;
+}
+
+.rocketCreateRace {
+  display: none;
+  background-color: #f2f0e7;
+  opacity: 0.9;
+  transition: 1s all;
+  height: 400px;
+  width:100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-flow: column;
+
+}
+.rockets{
+
+}
