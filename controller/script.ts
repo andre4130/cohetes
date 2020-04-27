@@ -2,6 +2,7 @@ var rocket:any[] = [];
 var id:string;
 var numberOfPropellers: number;
 var propellerPower:number[];
+var propeller:number[] = new Array;
 var rocketCounter:number;
 var counter:number;
 var currentPower1:number[]=[0,0,0,0,0,0];
@@ -29,20 +30,27 @@ function propellerCounter(numberOfPropellers:number){
       t ++;
       var id = (<HTMLInputElement>document.getElementById("rocketId")).value;
       id = id.toUpperCase();
+
       var numberOfPropellers = parseInt((<HTMLInputElement>document.getElementById("propellerNumber")).value);
       var propellerPower:number[] = new Array;
+
       //the number of propellers is counted in the function above, that also enables and disables the inputs.
       for (let i = 0; i < numberOfPropellers; i++) {
         var tempPower = (parseInt((<HTMLInputElement>document.getElementById("power"+(i+1))).value));
         propellerPower.push(tempPower);
       };
 
+
       if(id === "" || numberOfPropellers === NaN || propellerPower == []){
         window.alert("Please Set Up Your Rocket Correctly");
         t=t-1;
       } else {
-        var rocketTemp:any[] = new Rocket (id, numberOfPropellers, propellerPower);
+        var rocketTemp:any[] = new Rocket (id, numberOfPropellers);
         rocket[t]=rocketTemp;
+        for (let i = 0; i < numberOfPropellers; i++) {
+                rocket.addPropeller((new Propeller(propellerPower[i])))
+            }
+
         console.log(rocket[t]);
         window.alert("Rocket number "+(t+1)+" is ready");
         document.getElementById("rocketId").value="";
@@ -53,11 +61,20 @@ function propellerCounter(numberOfPropellers:number){
           temp.value ="";
         }
         counter=t;
+
         return rocket[t];
       }
     };
-  };
 
+
+// Add Propeller Function
+
+function addPropellers(propeller:number[]){
+  for (let i = 0; i < counter; i++) {
+          rocket.addPropeller((new Propeller(propellerPower[i])))
+        }
+        return rocket;
+}
 
   // Start Race Function
 
