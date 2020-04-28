@@ -2,7 +2,6 @@ var rocket:any[] = [];
 var id:string;
 var numberOfPropellers: number;
 var propellerPower:number[];
-var propeller:number[] = new Array;
 var rocketCounter:number;
 var counter:number;
 var currentPower1:number[]=[0,0,0,0,0,0];
@@ -28,9 +27,9 @@ function propellerCounter(numberOfPropellers:number){
     var button = document.getElementById("buttonSet"), t:number = -1;
     button.onclick = function createRocket() {
       t ++;
+
       var id = (<HTMLInputElement>document.getElementById("rocketId")).value;
       id = id.toUpperCase();
-
       var numberOfPropellers = parseInt((<HTMLInputElement>document.getElementById("propellerNumber")).value);
       var propellerPower:number[] = new Array;
 
@@ -40,18 +39,15 @@ function propellerCounter(numberOfPropellers:number){
         propellerPower.push(tempPower);
       };
 
-
       if(id === "" || numberOfPropellers === NaN || propellerPower == []){
         window.alert("Please Set Up Your Rocket Correctly");
         t=t-1;
       } else {
         var rocketTemp:any[] = new Rocket (id, numberOfPropellers);
-        rocket[t]=rocketTemp;
         for (let i = 0; i < numberOfPropellers; i++) {
-                rocket.addPropeller((new Propeller(propellerPower[i])))
+                rocketTemp.addPropeller((new Propeller(propellerPower[i])))
             }
-
-        console.log(rocket[t]);
+        rocket[t]=rocketTemp;
         window.alert("Rocket number "+(t+1)+" is ready");
         document.getElementById("rocketId").value="";
         document.getElementById("propellerNumber").value="";
@@ -61,26 +57,18 @@ function propellerCounter(numberOfPropellers:number){
           temp.value ="";
         }
         counter=t;
-
         return rocket[t];
       }
     };
+  };
 
-
-// Add Propeller Function
-
-function addPropellers(propeller:number[]){
-  for (let i = 0; i < counter; i++) {
-          rocket.addPropeller((new Propeller(propellerPower[i])))
-        }
-        return rocket;
-}
 
   // Start Race Function
 
   function startRace(){
     let a:number = counter-1;
     let b:number = counter;
+
 
     document.getElementById("body").removeAttribute("body1");
     document.getElementById("body").setAttribute("class","body2");
@@ -93,7 +81,8 @@ function addPropellers(propeller:number[]){
 
     document.getElementById("idRocket1").innerHTML="ID:"+rocket[a]["id"];
     document.getElementById("propellerNumber1").innerHTML=rocket[a]["numberOfPropellers"]+" Propellers";
-    document.getElementById("propellerPower1").innerHTML="Power: "+rocket[a]["propellerPower"];
+    document.getElementById("propellerPower1").innerHTML="Power: "+(JSON.stringify(rocket[a].propellerPower));
+    // document.getElementById("propellerPower1").innerHTML="Power: "+rocket[a].propellerPower[a]["propellerPower"];
 
     document.getElementById("idRocket2").innerHTML="ID:"+rocket[b]["id"];
     document.getElementById("propellerNumber2").innerHTML=rocket[b]["numberOfPropellers"]+" Propellers";

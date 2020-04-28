@@ -2,7 +2,6 @@ var rocket = [];
 var id;
 var numberOfPropellers;
 var propellerPower;
-var propeller = new Array;
 var rocketCounter;
 var counter;
 var currentPower1 = [0, 0, 0, 0, 0, 0];
@@ -43,11 +42,10 @@ function createRocket(id, numberOfPropellers, propellerPower) {
         }
         else {
             var rocketTemp = new Rocket(id, numberOfPropellers);
-            rocket[t] = rocketTemp;
             for (var i = 0; i < numberOfPropellers; i++) {
-                rocket.addPropeller((new Propeller(propellerPower[i])));
+                rocketTemp.addPropeller((new Propeller(propellerPower[i])));
             }
-            console.log(rocket[t]);
+            rocket[t] = rocketTemp;
             window.alert("Rocket number " + (t + 1) + " is ready");
             document.getElementById("rocketId").value = "";
             document.getElementById("propellerNumber").value = "";
@@ -60,149 +58,144 @@ function createRocket(id, numberOfPropellers, propellerPower) {
             return rocket[t];
         }
     };
-    // Add Propeller Function
-    function addPropellers(propeller) {
-        for (var i = 0; i < counter; i++) {
-            rocket.addPropeller((new Propeller(propellerPower[i])));
-        }
-        return rocket;
-    }
-    // Start Race Function
-    function startRace() {
-        var a = counter - 1;
-        var b = counter;
-        document.getElementById("body").removeAttribute("body1");
-        document.getElementById("body").setAttribute("class", "body2");
-        document.querySelector(".rocketCreate").style.display = "none";
-        document.querySelector(".rocketCreateRace").style.display = "flex";
-        document.querySelector(".jumbo1").style.opacity = "0";
-        document.querySelector(".jumbo2").style.opacity = "0";
-        document.querySelector(".jumbo3").style.opacity = "0.95";
-        document.getElementById("idRocket1").innerHTML = "ID:" + rocket[a]["id"];
-        document.getElementById("propellerNumber1").innerHTML = rocket[a]["numberOfPropellers"] + " Propellers";
-        document.getElementById("propellerPower1").innerHTML = "Power: " + rocket[a]["propellerPower"];
-        document.getElementById("idRocket2").innerHTML = "ID:" + rocket[b]["id"];
-        document.getElementById("propellerNumber2").innerHTML = rocket[b]["numberOfPropellers"] + " Propellers";
-        document.getElementById("propellerPower2").innerHTML = "Power: " + rocket[b]["propellerPower"];
-    }
-    function accelerate1() {
-        var a = counter - 1;
-        var speed1;
-        var n = rocket[a]["numberOfPropellers"]; //needed for the if function
-        var currentSpeed = currentPower1;
-        console.log(maxSpeed1);
-        console.log(n);
-        for (var i = 0; i < n; i++) {
-            if (currentSpeed[i] < rocket[a]["propellerPower"][i]) {
-                currentSpeed[i] = currentSpeed[i] + 10;
-            }
-            else {
-                currentSpeed[i] = currentSpeed[i];
-            }
-        }
-        currentPower1 = currentSpeed;
-        var maxSpeed1 = currentPower1.reduce(speedfunction);
-        ;
-        function speedfunction(total, num) {
-            return total + num;
-        }
-        document.getElementById("speed1").innerHTML = maxSpeed1 + ".000 km/h";
-        console.log(currentPower1);
-        currentSpeed1 = maxSpeed1;
-        return currentPower1;
-    }
-    ;
-    function accelerate2() {
-        var a = counter;
-        var speed1;
-        var n = rocket[a]["numberOfPropellers"]; //needed for the if function
-        var currentSpeed = currentPower2;
-        console.log(maxSpeed2);
-        console.log(n);
-        for (var i = 0; i < n; i++) {
-            if (currentSpeed[i] < rocket[a]["propellerPower"][i]) {
-                currentSpeed[i] = currentSpeed[i] + 10;
-            }
-            else {
-                currentSpeed[i] = currentSpeed[i];
-            }
-        }
-        currentPower2 = currentSpeed;
-        var maxSpeed2 = currentPower2.reduce(speedfunction);
-        ;
-        function speedfunction(total, num) {
-            return total + num;
-        }
-        document.getElementById("speed2").innerHTML = maxSpeed2 + ".000 km/h";
-        console.log(currentPower2);
-        currentSpeed2 = maxSpeed2;
-        return currentPower2;
-    }
-    ;
-    function break1() {
-        var a = counter - 1;
-        var speed1;
-        var n = rocket[a]["numberOfPropellers"]; //needed for the if function
-        var currentSpeed = currentPower1;
-        console.log(maxSpeed1);
-        console.log(n);
-        for (var i = 0; i < n; i++) {
-            if (currentSpeed[i] >= 10) {
-                currentSpeed[i] = currentSpeed[i] - 10;
-            }
-            else {
-                currentSpeed[i] = currentSpeed[i];
-            }
-        }
-        currentPower1 = currentSpeed;
-        var maxSpeed1 = currentPower1.reduce(speedfunction);
-        ;
-        function speedfunction(total, num) {
-            return total + num;
-        }
-        document.getElementById("speed1").innerHTML = maxSpeed1 + ".000 km/h";
-        console.log(currentPower1);
-        currentSpeed1 = maxSpeed1;
-        return currentPower1;
-    }
-    ;
-    function break2() {
-        var a = counter;
-        var speed1;
-        var n = rocket[a]["numberOfPropellers"]; //needed for the if function
-        var currentSpeed = currentPower2;
-        console.log(n);
-        for (var i = 0; i < n; i++) {
-            if (currentSpeed[i] >= 10) {
-                currentSpeed[i] = currentSpeed[i] - 10;
-            }
-            else {
-                currentSpeed[i] = currentSpeed[i];
-            }
-        }
-        currentPower2 = currentSpeed;
-        var maxSpeed2 = currentPower2.reduce(speedfunction);
-        ;
-        function speedfunction(total, num) {
-            return total + num;
-        }
-        document.getElementById("speed2").innerHTML = maxSpeed2 + ".000 km/h";
-        console.log(currentPower2);
-        currentSpeed2 = maxSpeed2;
-        return currentPower2;
-    }
-    ;
-    function winner(currentSpeed1, currentSpeed2) {
-        if (currentSpeed1 > currentSpeed2) {
-            console.log("winner is 1");
-            document.getElementById("winner1").innerHTML = "Rocket " + rocket[counter - 1]["id"] + " is ahead!";
-        }
-        else if (currentSpeed1 < currentSpeed2) {
-            document.getElementById("winner1").innerHTML = "Rocket " + rocket[counter]["id"] + " is ahead!";
-        }
-        else if (currentSpeed1 == currentSpeed2) {
-            document.getElementById("winner1").innerHTML = "We have a draw!";
-        }
-    }
-    ;
 }
+;
+// Start Race Function
+function startRace() {
+    var a = counter - 1;
+    var b = counter;
+    document.getElementById("body").removeAttribute("body1");
+    document.getElementById("body").setAttribute("class", "body2");
+    document.querySelector(".rocketCreate").style.display = "none";
+    document.querySelector(".rocketCreateRace").style.display = "flex";
+    document.querySelector(".jumbo1").style.opacity = "0";
+    document.querySelector(".jumbo2").style.opacity = "0";
+    document.querySelector(".jumbo3").style.opacity = "0.95";
+    document.getElementById("idRocket1").innerHTML = "ID:" + rocket[a]["id"];
+    document.getElementById("propellerNumber1").innerHTML = rocket[a]["numberOfPropellers"] + " Propellers";
+    document.getElementById("propellerPower1").innerHTML = "Power: " + (JSON.stringify(rocket[a].propellerPower));
+    // document.getElementById("propellerPower1").innerHTML="Power: "+rocket[a].propellerPower[a]["propellerPower"];
+    document.getElementById("idRocket2").innerHTML = "ID:" + rocket[b]["id"];
+    document.getElementById("propellerNumber2").innerHTML = rocket[b]["numberOfPropellers"] + " Propellers";
+    document.getElementById("propellerPower2").innerHTML = "Power: " + rocket[b]["propellerPower"];
+}
+function accelerate1() {
+    var a = counter - 1;
+    var speed1;
+    var n = rocket[a]["numberOfPropellers"]; //needed for the if function
+    var currentSpeed = currentPower1;
+    console.log(maxSpeed1);
+    console.log(n);
+    for (var i = 0; i < n; i++) {
+        if (currentSpeed[i] < rocket[a]["propellerPower"][i]) {
+            currentSpeed[i] = currentSpeed[i] + 10;
+        }
+        else {
+            currentSpeed[i] = currentSpeed[i];
+        }
+    }
+    currentPower1 = currentSpeed;
+    var maxSpeed1 = currentPower1.reduce(speedfunction);
+    ;
+    function speedfunction(total, num) {
+        return total + num;
+    }
+    document.getElementById("speed1").innerHTML = maxSpeed1 + ".000 km/h";
+    console.log(currentPower1);
+    currentSpeed1 = maxSpeed1;
+    return currentPower1;
+}
+;
+function accelerate2() {
+    var a = counter;
+    var speed1;
+    var n = rocket[a]["numberOfPropellers"]; //needed for the if function
+    var currentSpeed = currentPower2;
+    console.log(maxSpeed2);
+    console.log(n);
+    for (var i = 0; i < n; i++) {
+        if (currentSpeed[i] < rocket[a]["propellerPower"][i]) {
+            currentSpeed[i] = currentSpeed[i] + 10;
+        }
+        else {
+            currentSpeed[i] = currentSpeed[i];
+        }
+    }
+    currentPower2 = currentSpeed;
+    var maxSpeed2 = currentPower2.reduce(speedfunction);
+    ;
+    function speedfunction(total, num) {
+        return total + num;
+    }
+    document.getElementById("speed2").innerHTML = maxSpeed2 + ".000 km/h";
+    console.log(currentPower2);
+    currentSpeed2 = maxSpeed2;
+    return currentPower2;
+}
+;
+function break1() {
+    var a = counter - 1;
+    var speed1;
+    var n = rocket[a]["numberOfPropellers"]; //needed for the if function
+    var currentSpeed = currentPower1;
+    console.log(maxSpeed1);
+    console.log(n);
+    for (var i = 0; i < n; i++) {
+        if (currentSpeed[i] >= 10) {
+            currentSpeed[i] = currentSpeed[i] - 10;
+        }
+        else {
+            currentSpeed[i] = currentSpeed[i];
+        }
+    }
+    currentPower1 = currentSpeed;
+    var maxSpeed1 = currentPower1.reduce(speedfunction);
+    ;
+    function speedfunction(total, num) {
+        return total + num;
+    }
+    document.getElementById("speed1").innerHTML = maxSpeed1 + ".000 km/h";
+    console.log(currentPower1);
+    currentSpeed1 = maxSpeed1;
+    return currentPower1;
+}
+;
+function break2() {
+    var a = counter;
+    var speed1;
+    var n = rocket[a]["numberOfPropellers"]; //needed for the if function
+    var currentSpeed = currentPower2;
+    console.log(n);
+    for (var i = 0; i < n; i++) {
+        if (currentSpeed[i] >= 10) {
+            currentSpeed[i] = currentSpeed[i] - 10;
+        }
+        else {
+            currentSpeed[i] = currentSpeed[i];
+        }
+    }
+    currentPower2 = currentSpeed;
+    var maxSpeed2 = currentPower2.reduce(speedfunction);
+    ;
+    function speedfunction(total, num) {
+        return total + num;
+    }
+    document.getElementById("speed2").innerHTML = maxSpeed2 + ".000 km/h";
+    console.log(currentPower2);
+    currentSpeed2 = maxSpeed2;
+    return currentPower2;
+}
+;
+function winner(currentSpeed1, currentSpeed2) {
+    if (currentSpeed1 > currentSpeed2) {
+        console.log("winner is 1");
+        document.getElementById("winner1").innerHTML = "Rocket " + rocket[counter - 1]["id"] + " is ahead!";
+    }
+    else if (currentSpeed1 < currentSpeed2) {
+        document.getElementById("winner1").innerHTML = "Rocket " + rocket[counter]["id"] + " is ahead!";
+    }
+    else if (currentSpeed1 == currentSpeed2) {
+        document.getElementById("winner1").innerHTML = "We have a draw!";
+    }
+}
+;
