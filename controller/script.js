@@ -36,7 +36,7 @@ function createRocket(id, numberOfPropellers, propellerPower) {
             propellerPower.push(tempPower);
         }
         ;
-        if (id === "" || numberOfPropellers === NaN || propellerPower == []) {
+        if (id === "" || numberOfPropellers === NaN || propellerPower == null) {
             window.alert("Please Set Up Your Rocket Correctly");
             t = t - 1;
         }
